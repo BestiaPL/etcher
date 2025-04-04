@@ -35,11 +35,11 @@ const translation = {
 			toDrive: 'na {{description}} ({{name}})',
 			toTarget_one: 'na {{num}} nośniku',
 			toTarget_other: 'na {{num}} nośnikach',
-			andFailTarget_one: 'and failed to be flashed to {{num}} target',
-			andFailTarget_other: 'and failed to be flashed to {{num}} targets',
-			succeedTo: '{{name}} was successfully flashed {{target}}',
+			andFailTarget_one: 'i nie udało się nagrać na {{num}} nośniku',
+			andFailTarget_other: 'i nie udało się nagrać na {{num}} nośnikach',
+			succeedTo: '{{name}} został pomyślnie nagrany {{target}}',
 			exitWhileFlashing:
-				'You are currently flashing a drive. Closing Etcher may leave your drive in an unusable state.',
+				'Aktualnie zapisujesz dysk. Zamknięcie Etcher może pozostawić dysk w niestabilnym stanie.',
 			looksLikeWindowsImage:
 				'It looks like you are trying to burn a Windows image.\n\nUnlike other images, Windows images require special processing to be made bootable. We suggest you use a tool specially designed for this purpose, such as <a href="https://rufus.akeo.ie">Rufus</a> (Windows), <a href="https://github.com/slacka/WoeUSB">WoeUSB</a> (Linux), or Boot Camp Assistant (macOS).',
 			image: 'obraz',
@@ -47,12 +47,12 @@ const translation = {
 			missingPartitionTable:
 				'It looks like this is not a bootable {{type}}.\n\nThe {{type}} does not appear to contain a partition table, and might not be recognized or bootable by your device.',
 			largeDriveSize:
-				"This is a large drive! Make sure it doesn't contain files that you want to keep.",
+				"To jest duży dysk! Upewnij się, że nie zawiera plików, które chciałbyś zachować.",
 			systemDrive:
 				'Selecting your system drive is dangerous and will erase your drive!',
-			sourceDrive: 'Contains the image you chose to flash',
+			sourceDrive: 'Zawiera obraz wybrany do nagrania',
 			noSpace:
-				'Not enough space on the drive. Please insert larger one and try again.',
+				'Zbyt mało miejsca na dysku. Proszę włożyć większy i spróbować ponownie.',
 			genericFlashError:
 				'Something went wrong. If it is a compressed image, please check that the archive is not corrupted.\n{{error}}',
 			validation:
@@ -65,8 +65,8 @@ const translation = {
 			cannotWrite:
 				'Looks like Etcher is not able to write to this location of the drive. This error is usually caused by a faulty drive, reader, or port. \n\nPlease try again with another drive, reader, or port.',
 			childWriterDied:
-				'The writer process ended unexpectedly. Please try again, and contact the Etcher team if the problem persists.',
-			badProtocol: 'Only http:// and https:// URLs are supported.',
+				'Proces zapisywania niespodziewanie się zakończył. Proszę spróbować ponownie i skontaktować się z zespołem Etcher, jeżeli problem wystąpi ponownie.',
+			badProtocol: 'Obsługiwane są tylko adresy http:// i https://.',
 		},
 		target: {
 			selectTarget: 'Wybierz cel',
@@ -99,19 +99,19 @@ const translation = {
 			name: 'Nazwa',
 			size: 'Wielkość',
 			location: 'Położenie',
-			find: '{{length}} found',
+			find: 'znaleziono {{length}}',
 			select: 'Wybierz {{select}}',
 			showHidden: 'Pokaż {{num}} ukrytych',
 			systemDriveDanger:
-				'Selecting your system drive is dangerous and will erase your drive!',
-			openInBrowser: '`Etcher will open {{link}} in your browser`',
+				'Wybór dysku systemowego jest niebezpieczny i spowoduje jego wymazanie!',
+			openInBrowser: '`Etcher otworzy {{link}} w przeglądarce www`',
 			changeTarget: 'Zmień cel',
-			largeDriveWarning: 'You are about to erase an unusually large drive',
+			largeDriveWarning: 'Zamierzasz wymazać niezwykle duży dysk',
 			largeDriveWarningMsg:
-				'Are you sure the selected drive is not a storage drive?',
-			systemDriveWarning: "You are about to erase your computer's drives",
+				'Czy masz pewność, że wybrany dysk nie jest dyskiem magazynującym?',
+			systemDriveWarning: "Zamierzasz wymazać dyski Twoje komputera",
 			systemDriveWarningMsg:
-				'Are you sure you want to flash your system drive?',
+				'Na pewno chcesz zapisać na dysku systemowym?',
 		},
 		flash: {
 			another: 'Zapisz inny',
@@ -120,31 +120,31 @@ const translation = {
 			error: 'Błąd',
 			flash: 'Zapisz',
 			flashNow: 'Zapisz!',
-			skip: 'Validation has been skipped',
-			moreInfo: 'more info',
+			skip: 'Weryfikacja została pominięta',
+			moreInfo: 'więcej info',
 			speedTip:
-				'The speed is calculated by dividing the image size by the flashing time.\nDisk images with ext partitions flash faster as we are able to skip unused parts.',
-			speed: 'Effective speed: {{speed}} MB/s',
+				'Prędkość obliczana jest dzieląc wielkość obrazu przez czas zapisu.\nObrazy dysków z partycjami ext są zapisywane szybciej, ponieważ możemy pominąć nieużywane części.',
+			speed: 'Efektywna prędkość: {{speed}} MB/s',
 			speedShort: '{{speed}} MB/s',
 			eta: 'Pozostało: {{eta}}',
-			failedTarget: 'Failed targets',
-			failedRetry: 'Retry failed targets',
+			failedTarget: 'Błędnych zapisów',
+			failedRetry: 'Ponów błędne zapisy',
 			flashFailed: 'Zapisanie nieudane.',
 			flashCompleted: 'Zapisane udane!',
 		},
 		settings: {
 			errorReporting:
-				'Anonymously report errors and usage statistics to balena.io',
-			autoUpdate: 'Auto-updates enabled',
+				'Anonimowo raportuj błędy i statystyki użycia do balena.io',
+			autoUpdate: 'Automatycznie aktualizacje włączone',
 			settings: 'Ustawienia',
 			systemInformation: 'Informacje o systemie',
 			trimExtPartitions:
-				'Trim unallocated space on raw images (in ext-type partitions)',
+				'Obetnij nieużywane miejsce w obrazach raw (na partycjach typu ext)',
 		},
 		menu: {
 			edit: 'Edycja',
 			view: 'Widok',
-			devTool: 'Toggle Developer Tools',
+			devTool: 'Przełącz Narzędzia Programisty',
 			window: 'Okno',
 			help: 'Pomoc',
 			pro: 'Etcher Pro',
@@ -152,7 +152,7 @@ const translation = {
 			issue: 'Zgłoś błąd',
 			about: 'O programie Etcher',
 			hide: 'Ukryj Etcher',
-			hideOthers: 'Uktyj inne',
+			hideOthers: 'Ukryj inne',
 			unhide: 'Pokaż wszystkie',
 			quit: 'Wyjdź z Etcher',
 		},
